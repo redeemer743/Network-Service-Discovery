@@ -1,6 +1,5 @@
-# Network Service Discovery & Vulnerability Assessment Report
+# Network Service Discovery Report
 
-## Metadata
 * **Target Host IP:** Metasploitable 2 VM (`192.168.6.132`)
 * **Scan Source:** Kali Linux VM (`192.168.6.128`)
 * **Tools Used:** Nmap 7.98
