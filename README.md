@@ -31,10 +31,10 @@ The analysis revealed a critical and broad attack surface consisting of **23 ope
                                         └──────────────────────────────┘
 ```
 
-![Network Topology](images/Assignment 2.jpg)  
+![Network Topology](Images/Assignment2.jpg)  
 *Figure 1: Infrastructure Visualization*
 
-![Ping Scan](images/sn1.png)  
+![Ping Scan](Images/sn1.png)  
 *Figure 2: Verification of active network hosts running within the 192.168.6.0/24 subnet layer.*
 
 ---
@@ -72,7 +72,7 @@ The network service scan identified the host as active and running a diverse set
 
 ## 4. Gap Analysis & Unexpected Exposure
 
-![Comprehensive Service Enumeration Scan](images/sn2.png)  
+![Comprehensive Service Enumeration Scan](Images/sn2.png)  
 *Figure 3: Complete Nmap 7.98 system service version detection execution output.*
 
 Assuming a typical intended baseline of running a standard, secure production web server with isolated management capabilities, we find critical architectural deviations:
