@@ -36,31 +36,31 @@ The analysis revealed a critical and broad attack surface consisting of **23 ope
 ## 3. Discovered Services & Port Mapping
 The network service scan identified the host as active and running a diverse set of services. Below is the full table of the 23 open ports discovered by the Nmap version detection engine:
 
-| Port / Protocol | State | Service | Software / Fingerprint | Severity Risk |
+| Port / Protocol | State | Service | Software / Fingerprint |
 | :--- | :--- | :--- | :--- | :--- |
-| **21/tcp** | open | ftp | vsftpd 2.3.4 *(Malicious backdoor variant)* | **Critical** |
+| **21/tcp** | open | ftp | vsftpd 2.3.4 *(Malicious backdoor variant)* | 
 | **22/tcp** | open | ssh | OpenSSH 4.7p1 Debian 8ubuntu1 | Low |
-| **23/tcp** | open | telnet | Linux telnetd *(Cleartext administrative access)* | **High** |
-| **25/tcp** | open | smtp | Postfix smtpd | Low |
-| **53/tcp** | open | domain | ISC BIND 9.4.2 | Medium |
-| **80/tcp** | open | http | Apache httpd 2.2.8 (`(Ubuntu) DAV/2`) | **High** |
-| **111/tcp** | open | rpcbind | 2 (`RPC #100000`) | Low |
-| **139/tcp** | open | netbios-ssn | Samba smbd 3.X - 4.X *(Workgroup: WORKGROUP)* | Medium |
-| **445/tcp** | open | netbios-ssn | Samba smbd 3.X - 4.X *(Workgroup: WORKGROUP)* | **High** |
-| **512/tcp** | open | exec | netkit-rsh rexecd | **High** |
-| **513/tcp** | open | login | OpenBSD or Solaris rlogind | **High** |
-| **514/tcp** | open | tcpwrapped | Generic security TCP wrap handler | Low |
-| **1099/tcp** | open | java-rmi | GNU Classpath grmiregistry | Medium |
-| **1524/tcp** | open | bindshell | **Metasploitable root shell** *(No authentication)* | **Critical** |
-| **2049/tcp** | open | nfs | 2-4 (`RPC #100003`) | Medium |
-| **2121/tcp** | open | ftp | ProFTPD 1.3.1 | Medium |
-| **3306/tcp** | open | mysql | MySQL 5.0.51a-3ubuntu5 | **High** |
-| **5432/tcp** | open | postgresql | PostgreSQL DB 8.3.0 - 8.3.7 | **High** |
-| **5900/tcp** | open | vnc | VNC *(Protocol 3.3 connection layer)* | **High** |
-| **6000/tcp** | open | X11 | X11 graphical environment | Medium |
-| **6667/tcp** | open | irc | UnrealIRCd platform | **High** |
-| **8009/tcp** | open | ajp13 | Apache Jserv *(Protocol v1.3)* | Low |
-| **8180/tcp** | open | http | Apache Tomcat/Coyote JSP engine 1.1 | Medium |
+| **23/tcp** | open | telnet | Linux telnetd *(Cleartext administrative access)* |
+| **25/tcp** | open | smtp | Postfix smtpd |
+| **53/tcp** | open | domain | ISC BIND 9.4.2 |
+| **80/tcp** | open | http | Apache httpd 2.2.8 (`(Ubuntu) DAV/2`) | 
+| **111/tcp** | open | rpcbind | 2 (`RPC #100000`) |
+| **139/tcp** | open | netbios-ssn | Samba smbd 3.X - 4.X *(Workgroup: WORKGROUP)* 
+| **445/tcp** | open | netbios-ssn | Samba smbd 3.X - 4.X *(Workgroup: WORKGROUP)* 
+| **512/tcp** | open | exec | netkit-rsh rexecd | 
+| **513/tcp** | open | login | OpenBSD or Solaris rlogind | 
+| **514/tcp** | open | tcpwrapped | Generic security TCP wrap handler |
+| **1099/tcp** | open | java-rmi | GNU Classpath grmiregistry |
+| **1524/tcp** | open | bindshell | **Metasploitable root shell** *(No authentication)* |
+| **2049/tcp** | open | nfs | 2-4 (`RPC #100003`) |
+| **2121/tcp** | open | ftp | ProFTPD 1.3.1 |
+| **3306/tcp** | open | mysql | MySQL 5.0.51a-3ubuntu5 |
+| **5432/tcp** | open | postgresql | PostgreSQL DB 8.3.0 - 8.3.7 |
+| **5900/tcp** | open | vnc | VNC *(Protocol 3.3 connection layer)* |
+| **6000/tcp** | open | X11 | X11 graphical environment |
+| **6667/tcp** | open | irc | UnrealIRCd platform |
+| **8009/tcp** | open | ajp13 | Apache Jserv *(Protocol v1.3)* |
+| **8180/tcp** | open | http | Apache Tomcat/Coyote JSP engine 1.1 |
 
 ---
 
