@@ -31,24 +31,27 @@ The analysis revealed a critical and broad attack surface consisting of **23 ope
                                         └──────────────────────────────┘
 ```
 
+![Network Topology and Ping Scan](images/network_discovery.png)  
+*Figure 1: Verification of active network hosts running within the 192.168.6.0/24 subnet layer.*
+
 ---
 
 ## 3. Discovered Services & Port Mapping
 The network service scan identified the host as active and running a diverse set of services. Below is the full table of the 23 open ports discovered by the Nmap version detection engine:
 
 | Port / Protocol | State | Service | Software / Fingerprint |
-| :--- | :--- | :--- | :--- | :--- |
-| **21/tcp** | open | ftp | vsftpd 2.3.4 *(Malicious backdoor variant)* | 
-| **22/tcp** | open | ssh | OpenSSH 4.7p1 Debian 8ubuntu1 | Low |
+| :--- | :--- | :--- | :--- |
+| **21/tcp** | open | ftp | vsftpd 2.3.4 *(Malicious backdoor variant)* |
+| **22/tcp** | open | ssh | OpenSSH 4.7p1 Debian 8ubuntu1 |
 | **23/tcp** | open | telnet | Linux telnetd *(Cleartext administrative access)* |
 | **25/tcp** | open | smtp | Postfix smtpd |
 | **53/tcp** | open | domain | ISC BIND 9.4.2 |
-| **80/tcp** | open | http | Apache httpd 2.2.8 (`(Ubuntu) DAV/2`) | 
+| **80/tcp** | open | http | Apache httpd 2.2.8 (`(Ubuntu) DAV/2`) |
 | **111/tcp** | open | rpcbind | 2 (`RPC #100000`) |
-| **139/tcp** | open | netbios-ssn | Samba smbd 3.X - 4.X *(Workgroup: WORKGROUP)* 
-| **445/tcp** | open | netbios-ssn | Samba smbd 3.X - 4.X *(Workgroup: WORKGROUP)* 
-| **512/tcp** | open | exec | netkit-rsh rexecd | 
-| **513/tcp** | open | login | OpenBSD or Solaris rlogind | 
+| **139/tcp** | open | netbios-ssn | Samba smbd 3.X - 4.X *(Workgroup: WORKGROUP)* |
+| **445/tcp** | open | netbios-ssn | Samba smbd 3.X - 4.X *(Workgroup: WORKGROUP)* |
+| **512/tcp** | open | exec | netkit-rsh rexecd |
+| **513/tcp** | open | login | OpenBSD or Solaris rlogind |
 | **514/tcp** | open | tcpwrapped | Generic security TCP wrap handler |
 | **1099/tcp** | open | java-rmi | GNU Classpath grmiregistry |
 | **1524/tcp** | open | bindshell | **Metasploitable root shell** *(No authentication)* |
@@ -65,6 +68,10 @@ The network service scan identified the host as active and running a diverse set
 ---
 
 ## 4. Gap Analysis & Unexpected Exposure
+
+![Comprehensive Service Enumeration Scan](images/nmap_scan.png)  
+*Figure 2: Complete Nmap 7.98 system service version detection execution output.*
+
 Assuming a typical intended baseline of running a standard, secure production web server with isolated management capabilities, we find critical architectural deviations:
 
 * **Severe Accidental Root Exposure (Port 1524):** A running `bindshell` exposes an unauthenticated raw root terminal over the network. Connecting via Netcat provides complete system takeover immediately without authentication.
